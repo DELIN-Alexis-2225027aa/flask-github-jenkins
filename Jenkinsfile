@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    agent {
+        docker { image 'python:3.9' }
+    }
     environment {
         IMAGE_NAME = "flask-github-jenkins"
     }
@@ -12,8 +14,6 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 sh '''
-                    sudo apt-get update
-                    sudo apt-get install -y python3 python3-pip
                     python3 -m venv venv
                     . venv/bin/activate
                     pip install -r requirements.txt
