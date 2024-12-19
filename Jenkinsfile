@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git branch: 'main', url: 'https://github.com/<votre-utilisateur>/flask-github-jenkins.git'
+                git branch: 'main', url: 'https://github.com/DELIN-Alexis-2225027aa/flask-github-jenkins.git'
             }
         }
     }
